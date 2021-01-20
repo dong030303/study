@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue</title>
+    <script src="./vue.js"></script>
+</head>
+<style>
+    .normal{
+        color: blue;
+    }
+    .active{
+        color: red;
+    }
+</style>
+<body>
+    <div id="app">
+        <!-- <div>{{ msg }}</div>
+        <div v-html="msg"></div>
+        <div>{{ Math.round(number) }}</div> -->
+        <div :class="className" @click="changeClassName">{{ msg }}</div>
+         <!-- v-bind = :으로 변환 가능, v-on = @로 변환 가능 -->
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data:{
+                // msg: 'Hello Vue!<br/>Good job~',
+                // number: 2
+                msg: 'Hello Vue!',
+                className: 'normal'
+            },
+            methods: {
+                changeClassName () {
+                    this.className = 'active'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

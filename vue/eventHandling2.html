@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 수식어</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <style>
+        .parent{
+            width: 200px;
+            height: 200px;
+            background: blue;
+        }
+        .child{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <div id="app">
+        <div class="parent" @click.self="clickHandler">
+            <div class="child" @click="clickHandler"></div>
+        </div>
+    </div>
+
+    <script>
+        var vm = new Vue({
+        el: '#app',
+        methods: {
+            clickHandler (event) {
+                console.log(event.currentTarget.className)
+            }
+        }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 수식어2</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" @keydown.ctrl.enter="keydownHandler">
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            methods: {
+                keydownHandler(e) {
+                    console.log('Done!!')
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

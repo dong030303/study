@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div>{{ reverseMsg() }}</div>
+        <div>{{ reverseMsg() }}</div>
+        <div>{{ reverseMsg() }}</div>
+        <div>--------</div>
+        <div>{{ reversedMsg }}</div>
+        <div>{{ reversedMsg }}</div>
+        <div>{{ reversedMsg }}</div>
+        <!-- 이미 계산한 연산은 캐싱되어 연산을 반복하지 않음 -->
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'Hello Vue!'
+            },
+            computed:{
+                reversedMsg (){
+                    return this.msg.split('').reverse().join('')
+                }
+            },
+            methods: {
+                reverseMsg () {
+                    return this.msg.split('').reverse().join('')
+                }
+            }
+        })
+    </script>
+</body>
+</html>
