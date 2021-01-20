@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emit Events</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my-comp :my-msg="message" @my-event="updateMessage"></my-comp>
+    </div>
+
+    <script>
+
+        Vue.component('my-comp', {
+            template: '<div @click="updateMsg">{{myMsg}}</div>',
+            props: {
+                myMsg: String,
+
+            },
+            methods:{
+                updateMsg (){
+                    // this.myMsg = 'Good'     // 자식 -> 부모로 이어지는 데이터 변환은 문제가 있음
+                    this.$emit('my-event', 'Good')  // 자식에서 발생한 이벤트로 부모의 이벤트를 발생시켜 부모의 데이터를 변환
+                }
+            }
+        })
+
+        const vm = new Vue({
+        el: '#app',
+        data () {
+            return{
+                message: 'Hello'
+            }
+        },
+        methods: {
+            updateMessage (value) {
+                this.message = value
+            }
+        }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>컴포넌트 고유 속성 부여</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my-comp :my-msg="message"></my-comp>
+    </div>
+
+    <script>
+
+        Vue.component('my-comp', {
+            template: '<div>{{myMsg}}</div>',
+            props: {
+                myMsg: {
+                    type: [String, Number],
+                    default: 'Default',
+                    required: true,
+                    validator (value) {
+                        return value === 'Hello'
+                    }
+                }
+            }
+        })
+
+        const vm = new Vue({
+        el: '#app',
+        data () {
+            return{
+                message: 'Hello'
+            }
+        }
+        })
+    </script>
+</body>
+</html>
