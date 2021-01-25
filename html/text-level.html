@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-level semantics</title>
+</head>
+
+<body>
+    <!-- 텍스트로 취급되는 요소들 -->
+    <!-- 텍스트 사이에서 텍스트로 취급되는 요소 -->
+
+    <!-- a: 하이퍼텍스트(링크)를 생성 -->
+    <a href="https://naver.com">네이버</a>
+    <a>네이버</a> <!-- 비활성화 상태 -->
+    <!-- a 요소 내에 다른 a 요소는 삽입 불가 -->
+    <!-- interactive 콘텐츠 내에는 다른 interactive 콘텐츠 삽입 불가 -->
+    <div>
+        <a href="https://google.com">
+            <h1>Google</h1>
+            <p>king</p>
+        </a>
+    </div>
+    <!-- a 요소 hash link -->
+    <nav>
+        <a href="#htmlem">HTML EM 요소</a>
+        <a href="#htmlstrong">HTML strong 요소</a>
+    </nav>
+
+    <h2 id="htmlem">HTML EM 요소</h2>
+    <h2 id="htmlstrong">HTML strong 요소</h2>
+
+    <!-- em, strong: 강조 -->
+    <!-- strong: 강한 강조 (warning, Attention, required) em: 보편적인 강조 -->
+    <strong>주의하세요!</strong>
+    <h1>Chapter 1. <strong>Hello world</strong></h1>
+    <em>감자</em>는 맛있습니다.
+
+    <!-- q, cite -->
+    <!-- q: 인용구를 나타내는 요소, blockquote와 유사 -->
+    <!-- cite: 실체가 있는 물건이나 사이트 등을 인용해올 때 -->
+    <p><q>HTML is awesome</q> is on the <cite>Smashing magazine</cite></p>
+
+    <!-- dfn, abbr -->
+    <!-- dfn: 해당 페이지에서 최초로 정의된 용어를 나타냄 -->
+    <!-- abbr: 약어를 나타내는 요소 -->
+    <p><dfn id="whtwg"><abbr title="Web Hypertext Application ...">WHATWG</abbr></dfn>는 웹 표준화 기구입니다.</p>
+    <p><a href="#whtwg">WHATWG</a>에서 제정한 표준에는 HTML Living Standard가 있습니다.</p>
+
+    <!-- code: HTML 문서 내에서 코드를 묘사 -->
+    <p>HTML의 DOCTYPE에는 <code>&lt;!DOCTYPE HTML&gt;</code> 같은 것들이 있다.</p>
+
+    <!-- span: 의미 x, 여러 개의 텍스트를 감싸야 할 때 사용 -->
+    <span lang="ko">텍스트</span>
+
+    <!-- br, wbr -->
+    <!-- br: 줄바꿈 wbr: 특정 조건에서만 줄바꿈 -->
+    <p>안녕하세요. <br>조은입니다.</p>
+    <p>안녕하세요. <wbr>조은입니다.</p>
+</body>
+
+</html>

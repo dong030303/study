@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded</title>
+</head>
+<body>
+    <!-- 외부에 있는 콘텐츠를 가져올 때 사용(이미지, 비디오, 오디오, 타 HTML 문서 등) -->
+    <!-- picture, source, img -->
+    <img src="image.webp" alt="">
+    <picture>
+        <source src="image.webp" type="image/webp">
+        <source src="image.jpg" type="image/jpeg">
+        <img src="image.jpg" alt="">
+    </picture>
+
+    <!-- video, source, track -->
+    <!-- preload: 미리 비디오를 불어롬 -->
+    <!-- playsinline: 비디오를 모바일에서 인라인으로 재생하는 속성 -->
+    <!-- muted, qutoplay: 접근성 지침에 의하여 autoplay는 반드시 muted가 있는 상태에만 가능 -->
+    <!-- poster: 썸네일 이미지 -->
+    <!-- controls: video player로 활용도 가능 -->
+    <video src="video.mp4">
+        <source src="video.webm" type="video/webm">
+        <source src="video.mp4" type="video/mpeg4">
+
+        <track kind="subtitles" src="video.en.vtt" srclang="en" lang="en" label="English">
+        <!-- 자막 -->
+    </video>
+
+    <!-- audio, source -->
+    <!-- preload, autoplay, muted, controls 모두 지원됨 -->
+    <audio src="audio.mp3">
+        <source src="audio.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- iframe: 외부 HTML 문서를 가져옴 -->
+    <!-- iframe 요소와 부모 요소 사이는 격리 -->
+    <iframe src="" allow="" allowfullscreen width="" height=""></iframe>
+
+    <!-- image best practices -->
+    <!-- 픽셀 밀도 대응 -->
+    <picture>
+        <source src="image.webp" srcset="image@2x.webp 2x, image@3x.webp 3x" type="image/webp">
+        <source src="image.jpg" srcset="image@2x.jpeg 2x, image@3x.jpeg 3x" type="image/jpeg">
+        <img src="image.jpg" srcset="image@2x.jpeg 2x, image@3x.jpeg 3x" alt="">
+    </picture>
+
+    <!-- 브라우저의 크기에 따라 다른 이미지를 불러오고 싶은 경우 -->
+    <picture>
+        <source src="small.webp" type="image/webp" media="(max-width: 400px)">
+        <source src="medium.webp" type="image/webp" media="(min-width: 400px)">
+        <source src="large.webp" type="image/webp" media="(min-width: 1000px)">
+        <img src="medium.jpg" alt="">
+    </picture>
+
+    <!-- alt: altenative text의 약자, 대체 택스트 -->
+    <picture>
+        <source src="large.webp" type="image/webp" media="(min-width: 1000px)">
+        <img src="medium.jpg" alt="이미지">
+    </picture>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- charset, 문자 인코딩을 어떻게 할 지 결정 -->
+    <!-- UTF-8, 전세계 언어 대부분 지원 -->
+    <!-- EUC-KR, 한국어과 영문을 지원 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- viewport, 모바일 브라우저에서 화면을 어떻게 노출시킬 지 -->
+    <!-- 태블릿 PC 포함 -->
+
+    <!-- SEO에 도움을 주는 meatadata -->
+    <meta name="description" content="메타데이터 요소에 대한 설명을 다루는 웹페이지입니다.">
+
+    <!-- Social Metadata: Facebook - Open Graph -->
+    <!-- Open Graph Protocol: https://ogp.me -->
+    <meta property="og:title" content="metadata element">
+    <meta property="og:description" content="메타데이터 요소에 대한 설명을 다루는 웹피이지입니다.">
+    <meta property="og:url" content="https://techhtml.dev">
+    <meta property="og:image" content="https://techhtml.dev/images/social.jpg">
+
+    <!-- Social Metadata: Twitte - twitter Card -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:site" content="@euncho__">
+    <meta property="twitter:title" content="meatadata element">
+    <meta property="twitter:description" content="메타데이터 요소에 대한 설명을 다루는 웹피이지입니다.">
+    <meta property="twitter:image" content="https://techhtml.dev/images/social.jpg">
+    <title>metadata element</title>
+    <link rel="stylesheet" href="./style.css">
+    <style></style>
+</head>
+
+<body>
+    <!-- 용량과 시맨틱 관리에 치중할 필요가 있음 -->
+    <!-- heading 요소: h1 ~ h6
+    제목을 포함하는 익명 영역 생성(anonymouos section) -->
+    <h1>HTML Section</h1>
+    <p>안녕하세요</p>
+
+    <h2>HTML Article</h2>
+    <p>안녕하세요</p>
+
+    <h2>HTML Aside</h2>
+    <p>안녕하세요</p>
+
+    <!-- section 요소 & article -->
+    <!-- 컨텐츠의 독립성이 강할 경우 article, 독립성이 약할 경우 section (시멘틱 웹) -->
+    <!-- section 요소 & article 요소 내에서는 heading 사용을 권장 -->
+    <article>
+        <h1>HTML Section</h1>
+        <p>안녕하세요</p>
+
+        <section>
+            <h2>HTML Article</h2>
+            <p>안녕하세요</p>
+        </section>
+
+        <section>
+            <h2>HTML Aside</h2>
+            <p>안녕하세요</p>
+        </section>
+    </article>
+
+    <!-- header, hgroup -->
+    <!-- header: 특정 콘텐츠의 시작 부분 -->
+    <article>
+        <!-- nav: 페이지 네비게이션 콘텐츠 -->
+        <nav>
+            <a href="#html-section">html section</a>
+            <a href="#html-article">html article</a>
+        </nav>
+        <header>
+            <!-- hgroup 요소는 heading 요소를 그룹화 하여 제목 - 부제목 관계를 만듦 -->
+            <hgroup id="html-section">
+                <h1>HTML Section</h1>
+                <h2>누구나 쉽게 배우는</h2>
+            </hgroup>
+            <p>안녕하세요</p>
+        </header>
+
+        <section id="html-article">
+            <h2>HTML Article</h2>
+            <p>안녕하세요</p>
+        </section>
+
+        <section>
+            <h2>HTML Aside</h2>
+            <p>안녕하세요</p>
+        </section>
+
+        <!-- footer & address -->
+        <footer>
+            <!-- 콘텐츠 마무리 -->
+            <!-- copyright, 작성자 정보, 작성일 등 -->
+            <!-- address 요소: contact information -->
+            <address>
+                <p>작성자: <a href="www.naver.com">조은</a></p>
+                <p>서울특별시 어딘가</p>
+            </address>
+        </footer>
+
+        <!-- aside: 핵심 콘텐츠와 관련은 있으나, 그 흐름과는 관련이 없는 경우 -->
+        <!-- 콘텐츠 추천, 광고 등 -->
+        <aside>
+            <iframe src="ad.html"></iframe>
+        </aside>
+    </article>
+
+    <!-- heading: 콘텐츠의 제목 -->
+    <!-- article, section: 페이지의 구역 구분(=div) -->
+    <!-- header, footer, nav, aside: 용법에 따라 적극적으로 활용 -->
+    <!-- hgroup: heading을 grouping할 수 있다 -->
+    <!-- address: 페이지 카피라이트 혹은 출처나 기타 등을 작성 -->
+
+</body>
+
+</html>

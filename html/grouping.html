@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grouping content</title>
+</head>
+<body>
+    <h1>HTML Grouping Content</h1>
+    <h2>HTML P 요소</h2>
+    <p>HTML의 P요소는 Paragraph를 나타내는 요소이다.</p>
+
+    <!-- 외부의 요소 인용 -->
+    <blockquote>
+        <p>HTML은 문서를 표현하기 위해 만들어진 언어지만, 현재는 웹 애플리케이션도 활용됩니다.</p>
+        <cite>MDN</cite>
+    </blockquote>
+
+    <!-- ol, ul, menu, li -->
+    <ol>
+        <li>1번 항목</li>
+        <li>2번 항목</li>
+    </ol>
+    <ul>
+        <li>사과</li>
+        <li>바나나</li>
+    </ul>
+
+    <!-- firefox에서만 지원. 버튼 여러개를 가지고 있는 목록 -->
+    <menu>
+        <li><button>굵게하기</button></li>
+        <li><button>취소선</button></li>
+    </menu>
+
+    <!-- dl, dt, dd -->
+    <!-- dl 요소 내에게 특정 요소들을 그룹해야하는 경우에 한정하여 div 요소를 활용함 -->
+    <dl>
+        <div>
+            <dt>마늘</dt>
+        <dd>알싸한 맛</dd>
+        <dd>한국인들 애용품</dd>
+        </div>
+        <dt>상추</dt>
+        <dd>쌈싸머거</dd>
+    </dl>
+
+    <!-- figure, figcaption -->
+    <!-- figure: 컨텐츠의 부연 설명을 하는 컨텐츠의 컨테이너 -->
+    <!-- figcaption:  컨첸트의 부연 설명을 하는 컨텐츠-->
+    <figure>
+        <img src="nasa.jpg" alt="">
+        <figcaption>나사</figcaption>
+    </figure>
+
+    <!-- main: 가장 중요한 컨텐츠를 담는 컨테이너 -->
+    <!-- 한 페이지 내에서 한 번만 사용 가능 -->
+    <main>
+        <!-- 메인 컨텐츠 -->
+    </main>
+    <!-- hidden 속성 등을 활용하여 main 요소를 여러 번 사용 가능 -->
+    <main hidden></main> 
+    <!-- 단, 활성화 되어 있는 main 요소는 하나여야 한다. -->
+
+    <!-- div: 컨테이너 -->
+    <!-- 어떠한 의미도 지니지 않기에 시멘틱 웹핑에 맞지 않음 -->
+    <div></div>
+
+    
+</body>
+</html>
