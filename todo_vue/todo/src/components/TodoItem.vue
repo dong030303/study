@@ -55,7 +55,7 @@ export default {
     },
     date() {
       const date = dayjs(this.todo.createdAt);
-      const isSame = date.isSame(this.todo.updateAt);
+      const isSame = date.isSame(this.todo.updatedAt);
       if (isSame) {
         return date.format("YYYY년 MM월 DD일");
       } else {

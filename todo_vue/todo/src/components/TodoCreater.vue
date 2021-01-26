@@ -1,6 +1,5 @@
 <template>
   <div>
-    <button @click="createTodo">추가</button>
     <input
       :value="title"
       :placeholder="placeholder"
@@ -8,6 +7,7 @@
       @input="title = $event.target.value"
       @keypress.enter="createTodo"
     />
+    <button @click="createTodo" @keydown.enter="createTodo" focus>추가</button>
   </div>
 </template>
 
@@ -29,6 +29,7 @@ export default {
       }
       this.$emit("create-todo", this.title);
       this.title = validatedTitle;
+      this.title = "";
     }
   }
 };
