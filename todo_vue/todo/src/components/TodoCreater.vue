@@ -6,8 +6,9 @@
       type="text"
       @input="title = $event.target.value"
       @keypress.enter="createTodo"
-    />
-    <button @click="createTodo" @keydown.enter="createTodo" focus>추가</button>
+    /><!--입력창-->
+    <button @click="createTodo" focus>추가</button
+    ><!--추가 버튼-->
   </div>
 </template>
 
@@ -20,6 +21,7 @@ export default {
     };
   },
   methods: {
+    // 데이터 유효성 검사 후 데이터 삽입
     createTodo() {
       const validatedTitle = this.title && this.title.trim();
       if (!validatedTitle) {
