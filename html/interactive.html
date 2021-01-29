@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive content</title>
+</head>
+<body>
+    <!-- Interactive content -->
+    <!-- js에서 html로 넘어온 기능들 -->
+    <style>
+        details > summary {
+            transition: color 1s;
+            color: black;
+        }
+        details[open] > summary {
+            color: red;
+        }
+    </style>
+    <!-- details, summary -->
+    <details open>
+        <summary>Loading...</summary>
+        <p>이미지 다운로드 중...</p>
+        <p>사운드 다운로드 완료</p>
+    </details>
+
+    <!-- dialog -->
+    <button id="dialog-button" type="button">Dialog 열기</button>
+    <dialog open>
+        <h1>Add to cart</h1>
+        <p>주문하신 상품은 이것이 맞습니까?</p>
+        <button id="close-button" type="button">Dialog 닫기</button>
+    </dialog>
+    <script>
+        const button = document.querySelector('#dialog-button');
+        const colseBtn = document.querySelector('#close-button')
+        const dialog = document.querySelector('dialog');
+
+        button.addEventListener('click', (evt) => {
+            dialog.show();
+        })
+        
+        colseBtn.addEventListener('click', (evt) => {
+            dialog.close();
+        })
+    </script>
+</body>
+</html>
